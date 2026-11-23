@@ -51,7 +51,8 @@ let encontrosCarregados = false;
 
 async function carregarEncontros() {
     try {
-        const response = await fetch("../JSON/encontros.json");
+        // Use relative path from the HTML page location
+        const response = await fetch("JSON/encontros.json");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

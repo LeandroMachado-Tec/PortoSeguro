@@ -1,19 +1,35 @@
 [
     {
         "categoria": "Romântico",
-        "icone": "🌅",
-        "titulo": "Piquenique ao pôr do sol",
-        "descricao": "Prepare uma cesta com as comidas favoritas dela, uma toalha e uma playlist especial.",
-        "duracao": "2 a 3 horas",
-        "custo": "R$ 40–100"
+        "icone": "💌",
+        "titulo": "Conversar Sobre Nossos Sonhos",
+        "descricao": "O objetivo é contar sobre nossos sonhos e objetivos, porém de forma leve e amável.",
+        "duracao": "Indeterminado",
+        "custo": "Várias Beijinhos"
     },
     {
         "categoria": "Romântico",
         "icone": "💌",
-        "titulo": "Noite das nossas memórias",
-        "descricao": "Revejam fotos, contem histórias e escrevam uma carta curta um para o outro.",
-        "duracao": "1 a 2 horas",
-        "custo": "Quase grátis"
+        "titulo": "Noite das Nossas Memórias",
+        "descricao": "Vamos rever fotos, contar histórias e escrever uma cartinha um para o outro.",
+        "duracao": "Indeterminado",
+        "custo": "Beijos Apaixonados"
+    },
+    {
+        "categoria": "Romântico",
+        "icone": "💌",
+        "titulo": "Troca de Presentes",
+        "descricao": "O objetivo é fazer um presente a mão um para o outro, pode ser simples, o que importa é a intenção <3",
+        "duracao": "Indeterminado",
+        "custo": "Abraçoss"
+    },
+    {
+        "categoria": "Romântico",
+        "icone": "💌",
+        "titulo": "Um Segredo ou Uma Fofoca",
+        "descricao": "O objetivo é a gente contar um segredo ou uma fofoca que ainda não contamos.",
+        "duracao": "Indeterminado",
+        "custo": "Um cheiro no suvaco"
     },
     {
         "categoria": "Comida",

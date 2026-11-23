@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8d3544">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171514">
+    <meta name="color-scheme" content="light dark">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+
+    <title>Porto Seguro | Sobre</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/Sobre.css">
+</head>
+<body>
+    <main id="sobre-app" class="date-app sobre-app">
+        <div class="shell">
+            <header class="topbar">
+                <a href="../index.html" class="back-btn" aria-label="Voltar para a página inicial">
+                    <span class="back-text">Voltar</span>
+                </a>
+                <div class="brand">
+                    <span class="brand-mark" aria-hidden="true">R + PP</span>
+                    <span>Porto Seguro</span>
+                </div>
+            </header>
+
+            <section class="intro">
+                <p class="eyebrow">Sobre</p>
+                <h1>Uma rosa azul em seu Porto Seguro</h1>
+                <p class="intro-copy">
+                    Eu fiz esse aplicativo / site para você sempre poder sentir o amor que eu sinto por você, você é a minha maior inspiração ❤️⭐
+                </p>
+            </section>
+
+            <section class="sobre-scene" role="img" aria-label="Cena do Pequeno Príncipe olhando para uma rosa azul sob uma cúpula de vidro, em um planeta pequeno sob um céu estrelado.">
+                <div class="sobre-planet">
+                    <div class="sobre-dome">
+                        <svg class="sobre-rose" viewBox="0 0 120 150" xmlns="http://w3.org" aria-label="Rosa Azul">
+                        <defs>
+                            <!-- Gradientes da rosa azul -->
+                            <radialGradient id="roseOuter" cx="50%" cy="35%" r="60%">
+                            <stop offset="0%" stop-color="#1e6fff" />
+                            <stop offset="65%" stop-color="#0044cc" />
+                            <stop offset="100%" stop-color="#00267a" />
+                            </radialGradient>
+                            <radialGradient id="roseMid" cx="50%" cy="40%" r="55%">
+                            <stop offset="0%" stop-color="#4da3ff" />
+                            <stop offset="70%" stop-color="#0055e6" />
+                            <stop offset="100%" stop-color="#003399" />
+                            </radialGradient>
+                            <radialGradient id="roseInner" cx="50%" cy="45%" r="50%">
+                            <stop offset="0%" stop-color="#80bdff" />
+                            <stop offset="75%" stop-color="#1a75ff" />
+                            <stop offset="100%" stop-color="#0040b3" />
+                            </radialGradient>
+                            <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#3b7a1e" />
+                            <stop offset="50%" stop-color="#65b832" />
+                            <stop offset="100%" stop-color="#2d5e16" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Caule -->
+                        <path d="M60 66 Q58 105 61 146" stroke="url(#stemGrad)" stroke-width="4.5" stroke-linecap="round" fill="none" />
+
+                        <!-- Espinhos pequenos -->
+                        <path d="M59 95 L54 92 L59 99 Z" fill="#4c9624" />
+                        <path d="M60 118 L65 115 L60 122 Z" fill="#4c9624" />
+
+                        <!-- Folha esquerda -->
+                        <g transform="translate(59, 106) rotate(-28)">
+                            <path d="M0 0 Q-18 -8 -34 2 Q-18 12 0 0 Z" fill="#4a9923" />
+                            <path d="M0 0 Q-17 -1 -32 2" stroke="#75cc47" stroke-width="1" fill="none" />
+                        </g>
+
+                        <!-- Folha direita -->
+                        <g transform="translate(60, 116) rotate(26)">
+                            <path d="M0 0 Q18 -8 34 2 Q18 12 0 0 Z" fill="#3f871c" />
+                            <path d="M0 0 Q17 -1 32 2" stroke="#68bf3b" stroke-width="1" fill="none" />
+                        </g>
+
+                        <!-- Sépalas verdes na base do botão -->
+                        <path d="M46 62 Q34 56 30 48 Q40 58 50 64 Z" fill="#4a9923" />
+                        <path d="M74 62 Q86 56 90 48 Q80 58 70 64 Z" fill="#3f871c" />
+                        <path d="M54 64 Q48 72 44 74 Q52 68 58 65 Z" fill="#59b02c" />
+                        <path d="M66 64 Q72 72 76 74 Q68 68 62 65 Z" fill="#4a9923" />
+
+                        <!-- Botão da Rosa (camadas de pétalas) -->
+                        <!-- Pétalas externas -->
+                        <path d="M36 36 C32 54, 44 66, 60 66 C76 66, 88 54, 84 36 C82 24, 72 18, 60 18 C48 18, 38 24, 36 36 Z" fill="url(#roseOuter)" />
+                        <path d="M35 38 C28 30, 36 18, 50 22 C44 30, 42 42, 48 52 C38 48, 36 42, 35 38 Z" fill="#004de6" />
+                        <path d="M85 38 C92 30, 84 18, 70 22 C76 30, 78 42, 72 52 C82 48, 84 42, 85 38 Z" fill="#003cb3" />
+
+                        <!-- Pétalas médias -->
+                        <path d="M42 35 C40 48, 50 56, 60 56 C70 56, 80 48, 78 35 C76 24, 68 20, 60 20 C52 20, 44 24, 42 35 Z" fill="url(#roseMid)" />
+                        <path d="M43 32 C45 22, 58 19, 66 24 C56 26, 48 33, 50 43 C44 40, 42 36, 43 32 Z" fill="#3385ff" />
+                        <path d="M77 32 C75 22, 62 19, 54 24 C64 26, 72 33, 70 43 C76 40, 78 36, 77 32 Z" fill="#1a66ff" />
+
+                        <!-- Miolo espiralado da rosa -->
+                        <path d="M49 33 C49 25, 71 25, 71 33 C71 41, 49 41, 49 33 Z" fill="url(#roseInner)" />
+                        <path d="M53 32 C53 27, 67 27, 67 32 C67 37, 53 37, 53 32 Z" fill="#66b0ff" />
+                        <path d="M56 32 C57 29, 64 29, 64 32 C63 35, 57 34, 58 31" stroke="#003399" stroke-width="1.6" stroke-linecap="round" fill="none" />
+                        </svg>
+
+                    </div>
+
+                    <svg class="sobre-prince" viewBox="0 0 62 100" aria-hidden="true" focusable="false">
+                        <g fill="#f6e7c8">
+                            <circle cx="31" cy="15" r="9" />
+                            <path d="M31 24 C40 24 46 31 46 42 L46 66 C46 72 41 76 31 76 C21 76 16 72 16 66 L16 42 C16 31 22 24 31 24 Z" />
+                            <path d="M22 74 L22 96 L28 96 L28 76 Z" />
+                            <path d="M34 74 L34 96 L40 96 L40 76 Z" />
+                        </g>
+                        <path d="M22 12 L26 4 L30 11 L35 3 L39 12 Z" fill="#f2c14e" />
+                        <path d="M16 32 C8 36 4 44 6 52 C12 48 16 42 18 36 Z" fill="#8d3544" />
+                        <path d="M46 32 C54 36 58 44 56 52 C50 48 46 42 44 36 Z" fill="#8d3544" />
+                        <path d="M14 30 C22 36 40 36 48 30 L48 36 C40 42 22 42 14 36 Z" fill="#c04a5c" />
+                    </svg>
+                </div>
+            </section>
+
+            <section class="sobre-quote">
+                <p>
+                    “Tu te tornas eternamente responsável por aquilo que amas.”
+                </p>
+                <cite>O Pequeno Príncipe — Antoine de Saint-Exupéry</cite>
+            </section>
+
+            <section class="sobre-cards" aria-label="Sobre o projeto">
+                <article class="sobre-card">
+                    <span class="sobre-card-icon" aria-hidden="true">🌹</span>
+                    <h2>Minha Rosa Azul</h2>
+                    <p>
+                        Cada detalhe, eu criei pensando em você e no que seu coração iria sentir, fiz para ser especial.
+                        Eu estou aqui, mesmo se o mundo acabar, mesmo se nada tiver valor, você é TUDO que eu quero.
+                    </p>
+                </article>
+
+                <article class="sobre-card">
+                    <span class="sobre-card-icon" aria-hidden="true">🌙</span>
+                    <h2>Nosso Mundinho</h2>
+                    <p>
+                        Um mundo que estamos explorando a cada dia, você é preciosa, mais que isso, uma eterna felicidade em ter você comigo, minha perfeita estrela.
+                    </p>
+                </article>
+
+                <article class="sobre-card">
+                    <span class="sobre-card-icon" aria-hidden="true">💫</span>
+                    <h2>Minha Estrela</h2>
+                    <p>
+                        O mundo pode ter um fim, mas o meu amor por você não tem esse limite, ele é tão grande que pode superar qualquer coisa, eu sou louco por você ❤️
+                    </p>
+                </article>
+
+                <article class="sobre-card">
+                    <span class="sobre-card-icon" aria-hidden="true">🔒</span>
+                    <h2>Eternamente Seu</h2>
+                    <p>
+                        Este espaço é seu, é nosso, vou sempre me esforçar para ser o lugar mais especial que você pode querer ter.
+                    </p>
+                </article>
+            </section>
+
+            <section class="sobre-signature">
+                <p>
+                    Feito com amor para a minha Rosa Azul.<br>
+                    <strong>— PP</strong>
+                </p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

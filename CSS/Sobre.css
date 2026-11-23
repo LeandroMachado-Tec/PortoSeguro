@@ -1,0 +1,439 @@
+/* ==========================================================
+   SOBRE - ESTILOS ESPECÍFICOS
+   ========================================================== */
+
+.sobre-app {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(141, 53, 68, 0.09), transparent 58%),
+        var(--bg);
+}
+
+/* ---------- Botão voltar ---------- */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+}
+
+.back-btn:hover {
+    border-color: #bfaeb0;
+    background: #ffffff;
+}
+
+.back-btn:active {
+    transform: scale(0.97);
+}
+
+.back-icon {
+    position: relative;
+    width: 16px;
+    height: 2px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: var(--text);
+}
+
+.back-icon::before,
+.back-icon::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--text);
+}
+
+.back-icon::before {
+    width: 12px;
+    left: 4px;
+    top: -5px;
+    transform: rotate(-45deg);
+    transform-origin: left center;
+}
+
+.back-icon::after {
+    width: 12px;
+    left: 4px;
+    bottom: -5px;
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+
+.back-text {
+    display: inline-block;
+}
+
+/* ---------- Cena ilustrada ---------- */
+
+.sobre-scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 24px;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 68% 9%, rgba(255, 255, 255, 0.7) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 55% 22%, rgba(255, 255, 255, 0.8) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 41% 11%, rgba(255, 255, 255, 0.6) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.85) 0 2px, transparent 3px),
+        radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.65) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 8% 30%, rgba(255, 255, 255, 0.75) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 92% 34%, rgba(255, 255, 255, 0.6) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 74% 40%, rgba(255, 255, 255, 0.55) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 12% 48%, rgba(255, 255, 255, 0.5) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 88% 52%, rgba(255, 255, 255, 0.5) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 46% 44%, rgba(255, 255, 255, 0.45) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 62% 58%, rgba(255, 255, 255, 0.4) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 24% 62%, rgba(255, 255, 255, 0.4) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 78% 66%, rgba(255, 255, 255, 0.35) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 36% 74%, rgba(255, 255, 255, 0.35) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.3) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 14% 84%, rgba(255, 255, 255, 0.3) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 90% 86%, rgba(255, 255, 255, 0.3) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 50% 6%, rgba(255, 255, 255, 0.5) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 4% 60%, rgba(255, 255, 255, 0.35) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 96% 70%, rgba(255, 255, 255, 0.35) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 28% 40%, rgba(255, 255, 255, 0.3) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 72% 30%, rgba(255, 255, 255, 0.3) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 44% 90%, rgba(255, 255, 255, 0.25) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 84% 92%, rgba(255, 255, 255, 0.25) 0 1.5px, transparent 2.5px),
+        linear-gradient(180deg, #0b1734 0%, #15244d 48%, #2b2f5c 100%);
+    box-shadow: var(--shadow);
+}
+
+/* Lua */
+.sobre-scene::before {
+    content: "";
+    position: absolute;
+    top: 7%;
+    right: 9%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fffaf0, #f4dfae 62%, #e0c78c);
+    box-shadow: 0 0 36px rgba(255, 240, 200, 0.5);
+}
+
+/* Estrela cadente */
+.sobre-scene::after {
+    content: "";
+    position: absolute;
+    top: 16%;
+    left: 14%;
+    width: 86px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+    transform: rotate(-26deg);
+    opacity: 0;
+    animation: shooting-star 7s ease-in-out infinite;
+}
+
+@keyframes shooting-star {
+    0%,
+    72% {
+        opacity: 0;
+        transform: translate(-30px, 24px) rotate(-26deg);
+    }
+
+    78% {
+        opacity: 1;
+    }
+
+    88% {
+        opacity: 0;
+        transform: translate(90px, -34px) rotate(-26deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Planeta */
+.sobre-planet {
+    position: absolute;
+    left: 50%;
+    bottom: -46px;
+    width: 260px;
+    height: 260px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 24%, #f4dcae 0%, #dcbc7c 36%, #ab8147 70%, #6d4d29 100%);
+    box-shadow:
+        inset -16px -20px 44px rgba(0, 0, 0, 0.38),
+        inset 10px 12px 30px rgba(255, 255, 255, 0.18),
+        0 20px 44px rgba(0, 0, 0, 0.4);
+}
+
+/* Cratera do planeta */
+.sobre-planet::after {
+    content: "";
+    position: absolute;
+    right: 34px;
+    bottom: 52px;
+    width: 46px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(90, 62, 32, 0.35);
+    box-shadow:
+        -74px -46px 0 -4px rgba(90, 62, 32, 0.28),
+        -30px -96px 0 -8px rgba(90, 62, 32, 0.22);
+}
+
+/* Cúpula de vidro */
+.sobre-dome {
+    position: absolute;
+    left: 50%;
+    top: -110px; /* Ajustado para encostar no planeta com a nova altura */
+    width: 98px;
+    height: 114px;
+    transform: translateX(-50%);
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    border-bottom: 0;
+    border-radius: 50px 50px 8px 8px;
+    background: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.24),
+        rgba(255, 255, 255, 0.05) 55%,
+        rgba(190, 220, 255, 0.14)
+    );
+    box-shadow:
+        inset 0 0 34px rgba(255, 255, 255, 0.2),
+        0 0 30px rgba(120, 180, 255, 0.22);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* Reflexo da cúpula */
+.sobre-dome::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    width: 10px;
+    height: 48px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent);
+    transform: rotate(12deg);
+}
+
+/* Base da cúpula */
+.sobre-dome::after {
+    content: "";
+    position: absolute;
+    left: -8px;
+    bottom: -7px;
+    width: 114px; /* Sempre 16px maior que a largura da cúpula */
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #d9c39a, #a98c5f);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* Rosa Azul */
+.sobre-rose {
+    position: relative;
+    z-index: 1;
+    width: 72px;
+    height: 86px;
+    margin-bottom: 2px;
+    filter: drop-shadow(0 0 10px rgba(60, 150, 255, 0.45));
+    animation: rose-float 5s ease-in-out infinite;
+}
+
+
+@keyframes rose-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Pequeno Príncipe */
+.sobre-prince {
+    position: absolute;
+    left: 20px; /* Afasta ele para a esquerda, fora da cúpula */
+    top: -40px;  /* Ajusta a altura para os pés ficarem sobre a curva do planeta */
+    width: 62px;
+    height: 100px;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+    animation: prince-sway 6s ease-in-out infinite;
+    transform-origin: bottom center; /* Faz o balanço partir dos pés */
+}
+
+@keyframes prince-sway {
+    0%,
+    100% {
+        transform: rotate(-1.5deg);
+    }
+
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+/* ---------- Blocos de texto ---------- */
+
+.sobre-quote {
+    margin: 0 0 20px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.sobre-quote p {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+}
+
+.sobre-quote cite {
+    display: block;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sobre-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.sobre-card {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.sobre-card:hover {
+    border-color: #bfaeb0;
+    transform: translateY(-2px);
+}
+
+.sobre-card-icon {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    font-size: 20px;
+}
+
+.sobre-card h2 {
+    margin: 0 0 6px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.sobre-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.sobre-signature {
+    margin: 0;
+    padding: 18px;
+    border: 1px dashed var(--line);
+    border-radius: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.sobre-signature strong {
+    color: var(--accent-dark);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 420px) {
+    .sobre-scene {
+        aspect-ratio: 1 / 1;
+    }
+
+    .sobre-planet {
+        width: 230px;
+        height: 230px;
+        bottom: -40px;
+    }
+
+    .sobre-dome {
+        top: -98px;
+        width: 86px;
+        height: 102px;
+    }
+
+    .sobre-dome::after {
+        left: -7px;
+        width: 100px;
+    }
+
+    .sobre-rose {
+        width: 66px;
+        height: 78px;
+    }
+
+    .sobre-prince {
+        left: 20px;
+        top: -40px;
+        width: 54px;
+        height: 88px;
+    }
+}
+
+/* ---------- Modo escuro ---------- */
+
+@media (prefers-color-scheme: dark) {
+    .back-btn:hover {
+        border-color: #746661;
+        background: #282321;
+    }
+
+    .sobre-card:hover {
+        border-color: #746661;
+    }
+
+    .sobre-scene {
+        border-color: #403a37;
+    }
+}

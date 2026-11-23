@@ -17,19 +17,27 @@
     },
     {
         "categoria": "Comida",
-        "icone": "🍝",
+        "icone": "🍴",
         "titulo": "Jantar surpresa",
         "descricao": "Escolha uma receita que vocês nunca fizeram e cozinhem juntos sem pressa.",
-        "duracao": "2 horas",
+        "duracao": "2 a 3 horas",
         "custo": "R$ 50–120"
     },
     {
         "categoria": "Comida",
-        "icone": "🍨",
-        "titulo": "Rota da sobremesa",
-        "descricao": "Visitem dois lugares: um para o doce principal e outro para café ou sorvete.",
+        "icone": "🍴",
+        "titulo": "Sobremesa da Sua Escolha",
+        "descricao": "Eu, o Lê, vou preparar alguma sobremesa que você quer.",
         "duracao": "1 a 2 horas",
-        "custo": "R$ 40–90"
+        "custo": "R$ 15–50"
+    },
+    {
+        "categoria": "Comida",
+        "icone": "🍴",
+        "titulo": "Macarrão de Panela de Pressão",
+        "descricao": "Eu, o Lê, vou preparar um macarrão de panela de pressão pro meu momo <3",
+        "duracao": "1 a 2 horas",
+        "custo": "R$ 40–50"
     },
     {
         "categoria": "Um lugar para ir",
@@ -90,6 +98,51 @@
         "descricao": "Essa música é porque você me FASCINA, minha deusa com ar de menina <3",
         "duracao": "3 min 42 seg",
         "link": "https://www.youtube.com/watch?v=ravBvjNM_oE",
+        "linkTexto": "Ouvir no YouTube"
+    },
+    {
+        "categoria": "Músicas",
+        "icone": "🎵",
+        "titulo": "Eu Te Devoro",
+        "descricao": "Essa música é literalmente o que eu SINTO por você (EU TE DEVOROO) <3",
+        "duracao": "5 min 9 seg",
+        "link": "https://www.youtube.com/watch?v=6VNumghPrQ0",
+        "linkTexto": "Ouvir no YouTube"
+    },
+    {
+        "categoria": "Músicas",
+        "icone": "🎵",
+        "titulo": "Ela Une Todas As Coisas",
+        "descricao": "Essa música me faz pensar que você só precisa existir pra me completar <3",
+        "duracao": "4 min 8 seg",
+        "link": "https://www.youtube.com/watch?v=21szE9bYabs",
+        "linkTexto": "Ouvir no YouTube"
+    },
+    {
+        "categoria": "Músicas",
+        "icone": "🎵",
+        "titulo": "Flor de Tangerina",
+        "descricao": "Seu cheiro é nostálgico para mim, um cheiro que traz uma sensação única <3",
+        "duracao": "3 min 1 seg",
+        "link": "https://www.youtube.com/watch?v=e4Ez99gCOiY",
+        "linkTexto": "Ouvir no YouTube"
+    },
+    {
+        "categoria": "Músicas",
+        "icone": "🎵",
+        "titulo": "Vejo Enfim a Luz Brilhar",
+        "descricao": "Essa música é porque sonho com você desde quando eu nasci, minha ESTRELA ⭐",
+        "duracao": "3 min 36 seg",
+        "link": "https://www.youtube.com/watch?v=owaY2ih12sM",
+        "linkTexto": "Ouvir no YouTube"
+    },
+    {
+        "categoria": "Músicas",
+        "icone": "🎵",
+        "titulo": "Favorite Girl",
+        "descricao": "Essa música é porque você é a minha garota, minha garota favorita e isso é pra sempre <3",
+        "duracao": "4 min 17 seg",
+        "link": "https://www.youtube.com/watch?v=2u2Z07ujyD8",
         "linkTexto": "Ouvir no YouTube"
     }
 ]

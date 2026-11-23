@@ -51,8 +51,9 @@ let encontrosCarregados = false;
 
 async function carregarEncontros() {
     try {
-        // Use relative path from the HTML page location
-        const response = await fetch("JSON/encontros.json");
+        // Use ./ to make path explicitly relative to current page directory
+        // This works both locally and on GitHub Pages (served from /PortoSeguro/)
+        const response = await fetch("./JSON/encontros.json");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

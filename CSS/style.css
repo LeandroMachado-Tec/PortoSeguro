@@ -1,0 +1,900 @@
+/* ==========================================================
+   1. CORES E CONFIGURAÇÕES GERAIS
+   ========================================================== */
+
+:root {
+    --bg: #f4f1ed;
+    --surface: #fffdfa;
+    --surface-2: #ebe5de;
+    --text: #24211f;
+    --muted: #716a65;
+    --line: #ddd5cd;
+    --accent: #8d3544;
+    --accent-dark: #712735;
+    --accent-soft: #f1dfe2;
+    --shadow: 0 14px 40px rgba(52, 39, 35, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ==========================================================
+   2. ESTRUTURA PRINCIPAL
+   ========================================================== */
+
+.date-app {
+    width: 100%;
+    min-height: 100vh;
+    padding: 18px;
+}
+
+.shell {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ==========================================================
+   3. CABEÇALHO
+   ========================================================== */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2px 0 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+}
+
+.brand-mark {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    overflow: hidden;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step {
+    padding: 7px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   3.5. MENU HAMBÚRGUER
+   ========================================================== */
+
+.menu-btn {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    cursor: pointer;
+    transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.menu-btn:hover {
+    border-color: #bfaeb0;
+    background: #ffffff;
+}
+
+.menu-btn:active {
+    transform: scale(0.97);
+}
+
+.menu-icon {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: background 0.16s ease;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.2s ease, top 0.2s ease, bottom 0.2s ease;
+}
+
+.menu-icon::before {
+    top: -6px;
+}
+
+.menu-icon::after {
+    bottom: -6px;
+}
+
+.menu-btn[aria-expanded="true"] .menu-icon {
+    background: transparent;
+}
+
+.menu-btn[aria-expanded="true"] .menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-btn[aria-expanded="true"] .menu-icon::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+}
+
+.menu-panel[hidden] {
+    display: none;
+}
+
+.menu-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    animation: backdrop-in 0.2s ease forwards;
+}
+
+@keyframes backdrop-in {
+    to {
+        opacity: 1;
+    }
+}
+
+.menu-content {
+    position: relative;
+    margin: auto 0 auto auto;
+    width: 280px;
+    max-width: 85vw;
+    max-height: 85vh;
+    border-radius: 22px 0 0 22px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: menu-in 0.25s ease-out;
+}
+
+@keyframes menu-in {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.menu-title {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.menu-close {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.menu-close:hover {
+    border-color: #bfaeb0;
+    background: var(--bg);
+}
+
+.menu-close::before,
+.menu-close::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+}
+
+.menu-close::before {
+    transform: rotate(45deg);
+}
+
+.menu-close::after {
+    transform: rotate(-45deg);
+}
+
+.menu-items {
+    padding: 8px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.16s ease;
+}
+
+.menu-item:hover {
+    background: var(--bg);
+}
+
+.menu-item:active {
+    background: var(--surface-2);
+}
+
+.menu-item-icon {
+    font-size: 18px;
+}
+
+/* ==========================================================
+   4. APRESENTAÇÃO
+   ========================================================== */
+
+.intro {
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    margin: 0 0 9px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 430px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.intro-copy {
+    max-width: 420px;
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==========================================================
+   5. PAINEL DE CATEGORIAS
+   ========================================================== */
+
+.panel {
+    padding: 17px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.panel-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.selected-label {
+    max-width: 150px;
+    overflow: hidden;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--accent-dark);
+    font-size: 11px;
+    font-weight: 750;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+/* ==========================================================
+   6. BOTÕES DE CATEGORIA
+   ========================================================== */
+
+.choice {
+    position: relative;
+    min-height: 90px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: transparent;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    transition:
+        border-color 0.16s ease,
+        background 0.16s ease,
+        transform 0.16s ease,
+        box-shadow 0.16s ease;
+}
+
+.choice:hover {
+    border-color: #bfaeb0;
+    background: #ffffff;
+}
+
+.choice:active {
+    transform: scale(0.98);
+}
+
+.choice.active {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.choice-icon {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    margin-bottom: 12px;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--surface-2);
+    color: var(--accent-dark);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.choice.active .choice-icon {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.choice-name {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.choice-note {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* ==========================================================
+   7. BOTÕES DE AÇÃO
+   ========================================================== */
+
+.primary {
+    width: 100%;
+    margin-top: 14px;
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 15px;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(141, 53, 68, 0.19);
+    transition: background 0.16s ease, transform 0.16s ease;
+}
+
+.primary:hover {
+    background: var(--accent-dark);
+}
+
+.primary:active {
+    transform: scale(0.985);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(141, 53, 68, 0.25);
+    outline-offset: 3px;
+}
+
+.status {
+    min-height: 18px;
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* ==========================================================
+   8. RESULTADO DO SORTEIO
+   ========================================================== */
+
+.result {
+    display: none;
+    margin-top: 14px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.result.show {
+    display: block;
+    animation: result-in 0.28s ease-out;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.result-kicker {
+    margin: 0;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.collapse-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+}
+
+.collapse-btn:hover {
+    border-color: #bfaeb0;
+    background: var(--bg);
+}
+
+.collapse-btn:active {
+    transform: scale(0.95);
+}
+
+.result-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.result-icon {
+    display: grid;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    font-size: 23px;
+}
+
+.result h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.description {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid var(--line);
+}
+
+.meta-item {
+    padding: 10px 11px;
+    border-radius: 12px;
+    background: var(--bg);
+}
+
+.meta-label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.meta-value {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.result-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+}
+
+.result-link:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.result-link:active {
+    transform: translateY(0);
+}
+
+.again {
+    width: 100%;
+    margin-top: 13px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: transparent;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.again:hover {
+    background: var(--bg);
+}
+
+/* ==========================================================
+   8.5. BOTÃO MARCAR
+   ========================================================== */
+
+.result-actions {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+
+.mark-btn {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--accent);
+    border-radius: 13px;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.mark-btn:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.mark-btn:active {
+    transform: translateY(0);
+}
+
+.mark-btn.marked {
+    background: var(--surface-2);
+    border-color: var(--line);
+    color: var(--muted);
+}
+
+.mark-btn.marked:hover {
+    background: var(--bg);
+    border-color: #bfaeb0;
+    color: var(--text);
+}
+
+@keyframes result-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================
+   9. AJUSTES PARA TELAS PEQUENAS
+   ========================================================== */
+
+@media (max-width: 380px) {
+    .date-app {
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 31px;
+    }
+
+    .panel {
+        padding: 14px;
+    }
+
+    .choice {
+        min-height: 100px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .choice {
+        min-height: 100px;
+        padding: 14px;
+    }
+
+    .choice-name {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .choice-note {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+}
+
+/* ==========================================================
+   10. MENU RESPONSIVO (MOBILE)
+   ========================================================== */
+
+@media (max-width: 480px) {
+    .menu-content {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 0;
+        margin: 0;
+        animation: menu-in-mobile 0.3s ease-out;
+    }
+
+    @keyframes menu-in-mobile {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .menu-header {
+        padding: 14px 16px;
+    }
+
+    .menu-title {
+        font-size: 18px;
+    }
+
+    .menu-close {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-item {
+        padding: 18px 16px;
+        font-size: 16px;
+    }
+
+    .menu-item-icon {
+        font-size: 22px;
+    }
+}
+
+/* Landscape mobile - keep side panel but smaller */
+@media (max-width: 600px) and (orientation: landscape) {
+    .menu-content {
+        width: 240px;
+        max-width: 50vw;
+        border-radius: 22px 0 0 22px;
+        margin: auto 0 auto auto;
+        animation: menu-in 0.25s ease-out;
+    }
+}
+
+/* ==========================================================
+   10. MODO ESCURO AUTOMÁTICO
+   ========================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #171514;
+        --surface: #211e1d;
+        --surface-2: #312c2a;
+        --text: #f3efeb;
+        --muted: #b9afaa;
+        --line: #403a37;
+        --accent: #c56d7c;
+        --accent-dark: #dd8795;
+        --accent-soft: #43282e;
+        --shadow: 0 16px 44px rgba(0, 0, 0, 0.24);
+    }
+
+    .choice:hover {
+        border-color: #746661;
+        background: #282321;
+    }
+
+    .primary {
+        color: #211518;
+    }
+
+    .menu-btn:hover {
+        border-color: #746661;
+        background: #282321;
+    }
+
+    .menu-close:hover {
+        border-color: #746661;
+        background: #282321;
+    }
+
+    .collapse-btn:hover {
+        border-color: #746661;
+        background: #282321;
+    }
+
+    .menu-item:hover {
+        background: #282321;
+    }
+
+    .menu-item:active {
+        background: #312c2a;
+    }
+
+    .collapse-btn:hover {
+        border-color: #746661;
+        background: #282321;
+    }
+
+    .collapse-btn:active {
+        background: #312c2a;
+    }
+
+    .result-link:hover {
+        background: var(--accent);
+        color: #ffffff;
+        border-color: var(--accent-dark);
+    }
+
+    .result-link:active {
+        transform: translateY(0);
+    }
+
+    .mark-btn:hover {
+        background: var(--accent);
+        color: #ffffff;
+        border-color: var(--accent-dark);
+    }
+
+    .mark-btn:active {
+        transform: translateY(0);
+    }
+
+    .mark-btn.marked {
+        background: var(--surface-2);
+        border-color: var(--line);
+        color: var(--muted);
+    }
+
+    .mark-btn.marked:hover {
+        background: var(--bg);
+        border-color: #746661;
+        color: var(--text);
+    }
+}

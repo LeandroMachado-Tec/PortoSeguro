@@ -3,6 +3,7 @@
    ========================================================== */
 
 :root {
+    color-scheme: light dark;
     --bg: #f4f1ed;
     --surface: #fffdfa;
     --surface-2: #ebe5de;
@@ -109,6 +110,7 @@ body {
     border: 1px solid var(--line);
     border-radius: 12px;
     background: var(--surface);
+    color: var(--text);
     cursor: pointer;
     transition: border-color 0.16s ease, background 0.16s ease;
 }
@@ -126,7 +128,7 @@ body {
     position: relative;
     width: 20px;
     height: 2px;
-    background: var(--text);
+    background: currentColor;
     border-radius: 2px;
     transition: background 0.16s ease;
 }
@@ -138,7 +140,7 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--text);
+    background: currentColor;
     border-radius: 2px;
     transition: transform 0.2s ease, top 0.2s ease, bottom 0.2s ease;
 }
@@ -266,6 +268,7 @@ body {
     border: 1px solid var(--line);
     border-radius: 50%;
     background: var(--surface);
+    color: var(--text);
     cursor: pointer;
     display: grid;
     place-items: center;
@@ -285,7 +288,7 @@ body {
     position: absolute;
     width: 14px;
     height: 2px;
-    background: var(--text);
+    background: currentColor;
     border-radius: 2px;
 }
 
@@ -882,6 +885,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: dark) {
     :root {
+        color-scheme: dark;
         --bg: #171514;
         --surface: #211e1d;
         --surface-2: #312c2a;
@@ -901,6 +905,13 @@ button:focus-visible {
 
     .primary {
         color: #211518;
+    }
+
+    .menu-btn,
+    .menu-close {
+        border-color: #5a524e;
+        background: #2b2725;
+        color: #f3efeb;
     }
 
     .menu-btn:hover {

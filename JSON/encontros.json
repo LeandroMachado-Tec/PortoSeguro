@@ -184,5 +184,23 @@
         "duracao": "4 min 17 seg",
         "link": "https://www.youtube.com/watch?v=2u2Z07ujyD8",
         "linkTexto": "Ouvir no YouTube"
+    },
+    {
+        "categoria": "Músicas",
+        "icone": "🎵",
+        "titulo": "Exagerado",
+        "descricao": "Essa música é exatamente o que são os meus sentimentos por você, EXAGERADOS e eu não tenho e nunca tive vergonha disso <3",
+        "duracao": "3 min 43 seg",
+        "link": "https://www.youtube.com/watch?v=szts-5Zs5_8",
+        "linkTexto": "Ouvir no YouTube"
+    },
+    {
+        "categoria": "Músicas",
+        "icone": "🎵",
+        "titulo": "Que Nem Maré",
+        "descricao": "Essa música é uma lembrança dos meus sentimentos para você 'Nada vai me fazer desistir do amor', o dia mais difícil ainda é o dia mais especial ao seu lado ❤️ ",
+        "duracao": "3 min 57 seg",
+        "link": "https://www.youtube.com/watch?v=tPpOnU5QL_s",
+        "linkTexto": "Ouvir no YouTube"
     }
 ]

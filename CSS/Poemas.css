@@ -1,0 +1,610 @@
+/* ==========================================================
+   POEMAS - ESTILOS ESPECÍFICOS
+   ========================================================== */
+
+/* ---------- Paleta galáctica (sobrescreve as variáveis base) ---------- */
+
+.poemas-body {
+    --bg: #05060f;
+    --surface: rgba(255, 255, 255, 0.07);
+    --surface-2: rgba(255, 255, 255, 0.13);
+    --text: #f3f4ff;
+    --muted: #b7badb;
+    --line: rgba(255, 255, 255, 0.16);
+    --accent: #d98bff;
+    --accent-dark: #b45cff;
+    --accent-soft: rgba(217, 139, 255, 0.16);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #05060f;
+    color: var(--text);
+}
+
+/* ---------- Fundo de galáxia ---------- */
+
+.galaxy {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 130% 85% at 50% -12%, #1d1c52 0%, #0c0c28 46%, #05060f 100%);
+}
+
+.galaxy__banda {
+    position: absolute;
+    top: 50%;
+    left: -25%;
+    width: 150%;
+    height: 44%;
+    transform: translateY(-50%) rotate(-18deg);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(190, 160, 255, 0.16) 32%,
+        rgba(255, 190, 230, 0.15) 55%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    filter: blur(30px);
+    opacity: 0.85;
+}
+
+.galaxy__nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(62px);
+    mix-blend-mode: screen;
+}
+
+.galaxy__nebula--violeta {
+    top: -26vmax;
+    left: -22vmax;
+    width: 72vmax;
+    height: 72vmax;
+    background: radial-gradient(circle at 50% 50%, rgba(126, 87, 255, 0.55), rgba(126, 87, 255, 0) 66%);
+    animation: nebula-drift 26s ease-in-out infinite alternate;
+}
+
+.galaxy__nebula--rosa {
+    right: -20vmax;
+    bottom: -24vmax;
+    width: 64vmax;
+    height: 64vmax;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 94, 168, 0.45), rgba(255, 94, 168, 0) 66%);
+    animation: nebula-drift 32s ease-in-out infinite alternate-reverse;
+}
+
+.galaxy__nebula--azul {
+    top: 28%;
+    right: -26vmax;
+    width: 58vmax;
+    height: 58vmax;
+    background: radial-gradient(circle at 50% 50%, rgba(64, 176, 255, 0.38), rgba(64, 176, 255, 0) 68%);
+    animation: nebula-drift 38s ease-in-out infinite alternate;
+}
+
+.galaxy__stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.galaxy__stars--far {
+    opacity: 0.72;
+    box-shadow:
+        490px 561px 0 rgba(255, 255, 255, 0.43),
+        244px 443px 0 rgba(255, 255, 255, 0.68),
+        79px 879px 0 rgba(255, 255, 255, 0.73),
+        411px 284px 0 rgba(255, 255, 255, 0.86),
+        657px 77px 0 rgba(255, 255, 255, 0.67),
+        235px 672px 0 rgba(255, 255, 255, 0.45),
+        560px 487px 0 rgba(255, 255, 255, 0.46),
+        50px 939px 0 rgba(255, 255, 255, 0.98),
+        121px 444px 0 rgba(255, 255, 255, 0.97),
+        189px 419px 0 rgba(255, 255, 255, 0.71),
+        672px 281px 0 rgba(255, 255, 255, 0.46),
+        986px 446px 0 rgba(255, 255, 255, 0.50),
+        547px 330px 0 rgba(255, 255, 255, 0.45),
+        773px 352px 0 rgba(255, 255, 255, 0.58),
+        80px 926px 0 rgba(255, 255, 255, 0.51),
+        884px 471px 0 rgba(255, 255, 255, 0.50),
+        603px 402px 0 rgba(255, 255, 255, 0.84),
+        653px 136px 0 rgba(255, 255, 255, 0.50),
+        450px 90px 0 rgba(255, 255, 255, 0.38),
+        412px 681px 0 rgba(255, 255, 255, 0.77),
+        955px 325px 0 rgba(255, 255, 255, 0.63),
+        496px 439px 0 rgba(255, 255, 255, 0.89),
+        451px 439px 0 rgba(255, 255, 255, 0.52),
+        237px 743px 0 rgba(255, 255, 255, 0.44),
+        270px 767px 0 rgba(255, 255, 255, 0.91),
+        968px 927px 0 rgba(255, 255, 255, 0.91),
+        747px 640px 0 rgba(255, 255, 255, 0.71),
+        24px 324px 0 rgba(255, 255, 255, 0.58),
+        215px 394px 0 rgba(255, 255, 255, 0.80),
+        737px 267px 0 rgba(255, 255, 255, 0.97),
+        7px 360px 0 rgba(255, 255, 255, 0.73),
+        441px 89px 0 rgba(255, 255, 255, 0.99),
+        456px 872px 0 rgba(255, 255, 255, 0.73),
+        469px 125px 0 rgba(255, 255, 255, 0.87),
+        896px 264px 0 rgba(255, 255, 255, 0.37),
+        154px 707px 0 rgba(255, 255, 255, 0.80),
+        660px 870px 0 rgba(255, 255, 255, 0.50),
+        831px 169px 0 rgba(255, 255, 255, 0.37),
+        82px 21px 0 rgba(255, 255, 255, 0.70),
+        831px 843px 0 rgba(255, 255, 255, 0.44),
+        494px 52px 0 rgba(255, 255, 255, 0.53),
+        488px 64px 0 rgba(255, 255, 255, 0.58),
+        230px 296px 0 rgba(255, 255, 255, 0.86),
+        137px 165px 0 rgba(255, 255, 255, 0.35),
+        624px 86px 0 rgba(255, 255, 255, 0.61),
+        109px 478px 0 rgba(255, 255, 255, 0.62),
+        8px 756px 0 rgba(255, 255, 255, 0.64),
+        739px 338px 0 rgba(255, 255, 255, 0.95),
+        717px 639px 0 rgba(255, 255, 255, 0.52),
+        359px 77px 0 rgba(255, 255, 255, 0.92),
+        83px 68px 0 rgba(255, 255, 255, 0.47),
+        304px 30px 0 rgba(255, 255, 255, 0.74),
+        440px 377px 0 rgba(255, 255, 255, 0.70),
+        906px 528px 0 rgba(255, 255, 255, 0.62),
+        120px 899px 0 rgba(255, 255, 255, 0.78),
+        499px 906px 0 rgba(255, 255, 255, 0.79),
+        458px 967px 0 rgba(255, 255, 255, 0.93),
+        416px 498px 0 rgba(255, 255, 255, 0.81),
+        787px 915px 0 rgba(255, 255, 255, 0.70),
+        990px 635px 0 rgba(255, 255, 255, 0.89),
+        440px 75px 0 rgba(255, 255, 255, 0.98),
+        555px 652px 0 rgba(255, 255, 255, 0.60),
+        751px 782px 0 rgba(255, 255, 255, 0.68),
+        444px 882px 0 rgba(255, 255, 255, 0.82),
+        52px 369px 0 rgba(255, 255, 255, 0.65),
+        990px 659px 0 rgba(255, 255, 255, 0.45),
+        677px 169px 0 rgba(255, 255, 255, 0.48),
+        528px 315px 0 rgba(255, 255, 255, 0.36),
+        959px 514px 0 rgba(255, 255, 255, 0.37),
+        389px 184px 0 rgba(255, 255, 255, 0.78);
+    animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+.galaxy__stars--near {
+    width: 2px;
+    height: 2px;
+    box-shadow:
+        447px 623px 0 rgba(255, 255, 255, 0.49),
+        405px 153px 0 rgba(255, 255, 255, 0.37),
+        776px 570px 0 rgba(255, 255, 255, 0.91),
+        979px 291px 0 rgba(255, 255, 255, 0.45),
+        429px 731px 0 rgba(255, 255, 255, 0.54),
+        544px 308px 0 rgba(255, 255, 255, 0.81),
+        740px 438px 0 rgba(255, 255, 255, 0.89),
+        433px 538px 0 rgba(255, 255, 255, 0.38),
+        41px 25px 0 rgba(255, 255, 255, 0.86),
+        979px 314px 0 rgba(255, 255, 255, 0.66),
+        666px 824px 0 rgba(255, 255, 255, 0.69),
+        517px 970px 0 rgba(255, 255, 255, 0.57),
+        948px 170px 0 rgba(255, 255, 255, 0.58),
+        378px 839px 0 rgba(255, 255, 255, 0.99),
+        222px 395px 0 rgba(255, 255, 255, 0.76),
+        897px 255px 0 rgba(255, 255, 255, 0.82),
+        819px 834px 0 rgba(255, 255, 255, 0.78),
+        406px 550px 0 rgba(255, 255, 255, 0.93),
+        74px 819px 0 rgba(255, 255, 255, 0.87),
+        240px 58px 0 rgba(255, 255, 255, 0.89),
+        319px 683px 0 rgba(255, 255, 255, 0.60),
+        730px 112px 0 rgba(255, 255, 255, 0.92),
+        889px 760px 0 rgba(255, 255, 255, 0.82),
+        212px 46px 0 rgba(255, 255, 255, 0.58),
+        116px 384px 0 rgba(255, 255, 255, 0.46),
+        18px 192px 0 rgba(255, 255, 255, 0.74),
+        334px 887px 0 rgba(255, 255, 255, 0.39),
+        481px 885px 0 rgba(255, 255, 255, 0.97),
+        876px 604px 0 rgba(255, 255, 255, 0.81),
+        935px 458px 0 rgba(255, 255, 255, 0.83);
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.galaxy__shooting-star {
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    width: 130px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
+    transform: rotate(-24deg);
+    opacity: 0;
+    animation: shooting-star 9s ease-in-out infinite;
+}
+
+@keyframes nebula-drift {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate3d(4vmax, 3vmax, 0) scale(1.12);
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 0.95;
+    }
+}
+
+@keyframes shooting-star {
+    0%,
+    70% {
+        opacity: 0;
+        transform: translate(-30px, 24px) rotate(-24deg);
+    }
+
+    76% {
+        opacity: 1;
+    }
+
+    88% {
+        opacity: 0;
+        transform: translate(110px, -38px) rotate(-24deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ---------- Layout ---------- */
+
+.poemas-app {
+    position: relative;
+    z-index: 1;
+}
+
+.poemas-app .topbar {
+    margin-bottom: 26px;
+}
+
+.poemas-app .brand {
+    color: var(--text);
+}
+
+.poemas-app .brand-mark {
+    background: linear-gradient(140deg, #d98bff, #6f5bff 55%, #4fb8ff);
+    box-shadow: 0 0 22px rgba(180, 92, 255, 0.45);
+}
+
+.poemas-app .intro {
+    margin-bottom: 22px;
+}
+
+.poemas-app .intro h1 {
+    max-width: 460px;
+    font-size: 30px;
+    line-height: 1.18;
+    text-wrap: balance;
+    background: linear-gradient(100deg, #ffe6f7 0%, #d9c4ff 48%, #9fe8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.poemas-app .intro-copy {
+    max-width: 430px;
+    color: var(--muted);
+}
+
+/* ---------- Botão voltar ---------- */
+
+.poemas-app .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+}
+
+.poemas-app .back-btn:hover {
+    border-color: rgba(217, 139, 255, 0.6);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.poemas-app .back-btn:active {
+    transform: scale(0.97);
+}
+
+/* ---------- Painel ---------- */
+
+.poemas-panel {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.poemas-panel .panel-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.poemas-panel .selected-label {
+    max-width: 180px;
+    background: rgba(217, 139, 255, 0.18);
+    color: #f0d9ff;
+}
+
+.poemas-panel .status {
+    color: var(--muted);
+}
+
+/* ---------- Lista de poemas ---------- */
+
+.poemas-lista {
+    display: grid;
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.poema-card {
+    position: relative;
+    padding: 22px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 22px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035));
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.poema-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 214, 240, 0), rgba(217, 139, 255, 0.85), rgba(143, 216, 255, 0.75), rgba(255, 214, 240, 0));
+}
+
+.poema-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(217, 139, 255, 0.42);
+}
+
+.poema-estrela {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffd6f0;
+    font-size: 15px;
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(255, 190, 240, 0.85);
+}
+
+/* ---------- Título em destaque ---------- */
+
+.poema-titulo {
+    margin: 0 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    color: #f6e9ff;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .poema-titulo {
+        background-image: linear-gradient(100deg, #ffe0f4 0%, #d3b6ff 45%, #9fe8ff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* ---------- Texto do poema (estrofes de 4 em 4 linhas) ---------- */
+
+.poema-texto {
+    display: grid;
+    gap: 14px;
+}
+
+.poema-estrofe {
+    margin: 0;
+    padding: 0;
+}
+
+.poema-linha {
+    display: block;
+    color: #e9eaff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15.5px;
+    line-height: 1.62;
+    letter-spacing: -0.005em;
+}
+
+/* ---------- Frase final em destaque ---------- */
+
+.poema-frase-final {
+    position: relative;
+    margin: 20px 0 0;
+    padding: 15px 16px 15px 18px;
+    border: 1px solid rgba(255, 214, 240, 0.3);
+    border-radius: 16px;
+    background: linear-gradient(100deg, rgba(255, 214, 240, 0.17), rgba(185, 167, 255, 0.1));
+    box-shadow: inset 0 0 26px rgba(255, 214, 240, 0.08);
+}
+
+.poema-frase-final::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 0;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #ffd6f0, #b45cff);
+}
+
+.poema-frase-rotulo {
+    display: block;
+    margin-bottom: 6px;
+    color: #ffc9ec;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.poema-frase-texto {
+    display: block;
+    color: #fff0fa;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16.5px;
+    font-style: italic;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+}
+
+/* ---------- Rodapé ---------- */
+
+.poemas-footer {
+    margin-top: 22px;
+    padding: 16px;
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.poemas-footer p {
+    margin: 0;
+}
+
+.poemas-footer strong {
+    color: #ffc9ec;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 480px) {
+    .poemas-app .intro h1 {
+        font-size: 25px;
+    }
+
+    .poemas-panel {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .poemas-lista {
+        gap: 15px;
+    }
+
+    .poema-card {
+        padding: 19px 16px;
+        border-radius: 18px;
+    }
+
+    .poema-titulo {
+        font-size: 21px;
+    }
+
+    .poema-linha {
+        font-size: 15px;
+    }
+
+    .poema-frase-texto {
+        font-size: 15.5px;
+    }
+}
+
+@media (max-width: 380px) {
+    .date-app {
+        padding: 14px;
+    }
+
+    .poemas-app .intro h1 {
+        font-size: 22px;
+    }
+
+    .poemas-panel {
+        padding: 13px;
+    }
+
+    .poema-card {
+        padding: 17px 14px;
+    }
+
+    .poema-titulo {
+        font-size: 19px;
+    }
+
+    .poema-linha {
+        font-size: 14.5px;
+        line-height: 1.58;
+    }
+
+    .poema-frase-final {
+        padding: 13px 13px 13px 15px;
+    }
+
+    .poema-frase-texto {
+        font-size: 15px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+    .poemas-app .intro {
+        margin-bottom: 16px;
+    }
+
+    .poemas-app .intro h1 {
+        font-size: 23px;
+    }
+
+    .poemas-lista {
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .galaxy__nebula,
+    .galaxy__stars,
+    .galaxy__shooting-star {
+        animation: none;
+    }
+
+    .poema-card,
+    .poemas-app .back-btn {
+        transition: none;
+    }
+}

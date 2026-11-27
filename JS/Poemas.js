@@ -4,6 +4,7 @@
 
 const CAMINHO_POEMAS_JSON = "../JSON/Poemas.json";
 const LINHAS_POR_ESTROFE = 4;
+const ESTROFES_VISIVEIS = 2;
 
 const listaPoemas = document.getElementById("poemas-lista");
 const statusPoemas = document.getElementById("poemas-status");
@@ -18,6 +19,8 @@ if (document.readyState === "loading") {
 } else {
     carregarPoemas();
 }
+
+listaPoemas.addEventListener("click", tratarCliquePoema);
 
 /* ==========================================================
    CARREGAMENTO DO JSON
@@ -77,21 +80,56 @@ function criarCartaoPoema(poema, indice) {
     titulo.textContent = obterTitulo(poema);
     cartao.appendChild(titulo);
 
+    const estrofes = agruparEmEstrofes(normalizarLinhas(obterTexto(poema)));
+    const estrofesVisiveis = estrofes.slice(0, ESTROFES_VISIVEIS);
+    const estrofesExtras = estrofes.slice(ESTROFES_VISIVEIS);
+
     const texto = document.createElement("div");
     texto.className = "poema-texto";
-    agruparEmEstrofes(normalizarLinhas(obterTexto(poema))).forEach(linhas => {
-        const estrofe = document.createElement("p");
-        estrofe.className = "poema-estrofe";
-        linhas.forEach(linha => {
-            const elementoLinha = document.createElement("span");
-            elementoLinha.className = "poema-linha";
-            elementoLinha.textContent = linha;
-            estrofe.appendChild(elementoLinha);
-        });
-        texto.appendChild(estrofe);
-    });
+    estrofesVisiveis.forEach(linhas => texto.appendChild(criarEstrofe(linhas)));
     cartao.appendChild(texto);
 
+    const fraseFinal = criarFraseFinal(obterFraseFinal(poema));
+
+    if (estrofesExtras.length > 0) {
+        const idExtra = `poema-extra-${indice}`;
+
+        const extra = document.createElement("div");
+        extra.className = "poema-extra";
+        extra.id = idExtra;
+        extra.setAttribute("inert", "");
+        extra.setAttribute("aria-hidden", "true");
+
+        const conteudoExtra = document.createElement("div");
+        conteudoExtra.className = "poema-extra-conteudo";
+        estrofesExtras.forEach(linhas => conteudoExtra.appendChild(criarEstrofe(linhas)));
+        conteudoExtra.appendChild(fraseFinal);
+        extra.appendChild(conteudoExtra);
+
+        cartao.appendChild(extra);
+        cartao.appendChild(criarBotaoLerMais(idExtra));
+    } else {
+        cartao.appendChild(fraseFinal);
+    }
+
+    return cartao;
+}
+
+function criarEstrofe(linhas) {
+    const estrofe = document.createElement("p");
+    estrofe.className = "poema-estrofe";
+
+    linhas.forEach(linha => {
+        const elementoLinha = document.createElement("span");
+        elementoLinha.className = "poema-linha";
+        elementoLinha.textContent = linha;
+        estrofe.appendChild(elementoLinha);
+    });
+
+    return estrofe;
+}
+
+function criarFraseFinal(textoFrase) {
     const fraseFinal = document.createElement("p");
     fraseFinal.className = "poema-frase-final";
 
@@ -102,12 +140,63 @@ function criarCartaoPoema(poema, indice) {
 
     const conteudo = document.createElement("span");
     conteudo.className = "poema-frase-texto";
-    conteudo.textContent = obterFraseFinal(poema);
+    conteudo.textContent = textoFrase;
     fraseFinal.appendChild(conteudo);
 
-    cartao.appendChild(fraseFinal);
+    return fraseFinal;
+}
 
-    return cartao;
+function criarBotaoLerMais(idConteudo) {
+    const botao = document.createElement("button");
+    botao.type = "button";
+    botao.className = "poema-toggle";
+    botao.setAttribute("aria-expanded", "false");
+    botao.setAttribute("aria-controls", idConteudo);
+
+    const rotulo = document.createElement("span");
+    rotulo.className = "poema-toggle-texto";
+    rotulo.textContent = "Ler mais";
+    botao.appendChild(rotulo);
+
+    const icone = document.createElement("span");
+    icone.className = "poema-toggle-icone";
+    icone.setAttribute("aria-hidden", "true");
+    botao.appendChild(icone);
+
+    return botao;
+}
+
+/* ==========================================================
+   EXPANSÃO E RECOLHIMENTO
+   ========================================================== */
+
+function tratarCliquePoema(evento) {
+    const botao = evento.target.closest(".poema-toggle");
+    if (!botao || !listaPoemas.contains(botao)) {
+        return;
+    }
+
+    const cartao = botao.closest(".poema-card");
+    const extra = cartao ? cartao.querySelector(".poema-extra") : null;
+    if (!cartao || !extra) {
+        return;
+    }
+
+    const expandido = cartao.classList.toggle("is-expanded");
+    botao.setAttribute("aria-expanded", String(expandido));
+
+    const rotulo = botao.querySelector(".poema-toggle-texto");
+    if (rotulo) {
+        rotulo.textContent = expandido ? "Ler menos" : "Ler mais";
+    }
+
+    if (expandido) {
+        extra.removeAttribute("inert");
+        extra.removeAttribute("aria-hidden");
+    } else {
+        extra.setAttribute("inert", "");
+        extra.setAttribute("aria-hidden", "true");
+    }
 }
 
 /* ==========================================================
